@@ -329,40 +329,6 @@ function acf_return_item($field, $type = 0, $post_obj, $post_type, $taxonomy = '
  *
  */
 
-/* Function Post List  */
-function posts_list($fieldobj) {
-  $field = $fieldobj;
-  $layout = $field['acf_fc_layout'];
-  $type = $field['posts_list_type'];
-
-  if ($type == 'custom') {
-    $post_ids = [];
-    $post_obj = $field['posts_list_custom'];
-    foreach ($post_obj as $value) {
-      array_push($post_ids, $value->ID);
-    }
-    
-    $arg_post = array(
-      'post_type'       => 'post',
-      'post_status'     => 'publish',
-      'post__in'        => $post_ids,
-      'orderby'         => 'post__in'
-    );
-    $posts = Timber::get_posts($arg_post);
-    $field['posts_list_custom'] = $posts;
-  } else {
-    $arg_post = array(
-      'post_type'       => 'post',
-      'post_status'     => 'publish',
-      'posts_per_page'  => $field['posts_list_per_page'],
-    );
-    $posts = Timber::get_posts($arg_post);
-    $field['posts_list_custom'] = $posts;
-  }
-  //print_r($field);
-  return $field;
-}
-
 function layout_resuft($layout_resuft) {
   $arr_resuft = [];
 
@@ -408,69 +374,9 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'posts_list':
-          $field = posts_list($field);
-          //print_r($field);
-          try {
-            Timber::render($layout . '.twig', $field);
-          } catch (Exception $e) {
-            echo __('Could not find a twig file for layout type: ', 'pdj_theme') . $layout . '<br>';
-          }
-          break;
-
-        /*case 'layout_two_columns':
-          $column_first = $field['column_first_group_component'];
-          $column_seccond = $field['column_seccond_group_component'];
-          $field['column_first_group_component_resuft'] = [];
-          $field['column_seccond_group_component_resuft'] = [];
-
-          foreach ($column_first as $subfield) {
-            $subfield_layout = $subfield['acf_fc_layout'];
-
-            switch ($subfield_layout) {
-
-              case 'posts_list':
-                array_push($field['column_first_group_component_resuft'], posts_list($subfield));
-                break;
-
-              case 'layout_two_columns':
-              case 'layout_one_column':
-                echo __('Content - Sidebar field don\'t work in this layout.', 'pdj_theme');
-                break;
-
-              default:
-                array_push($field['column_first_group_component_resuft'], $subfield);
-            }
-          }
-
-          foreach ($column_seccond as $subfield) {
-            $subfield_layout = $subfield['acf_fc_layout'];
-
-            switch ($subfield_layout) {
-              case 'posts_list':
-                array_push($field['column_seccond_group_component_resuft'], posts_list($subfield));
-                break;
-
-              case 'layout_two_columns':
-              case 'layout_one_column':
-                echo __('Content - Sidebar field don\'t work in this layout.', 'pdj_theme');
-                break;
-
-              default:
-                array_push($field['column_seccond_group_component_resuft'], $subfield);
-            }
-          }
-          //print_r($field);
-          try {
-            Timber::render($layout . '.twig', $field);
-          } catch (Exception $e) {
-            echo __('Could not find a twig file for layout type: ', 'pdj_theme') . $layout . '<br>';
-          }
-
-          break;*/
 
         default:
-          //print_r($field);
+          print_r($field);
           try {
             Timber::render($layout . '.twig', $field);
           } catch (Exception $e) {
@@ -505,7 +411,7 @@ function sub_flexible_content($name) {
           echo __('Could not find a twig file for layout type: ', 'pdj_theme') . $layout . '<br>';
         }
         break;
-      
+
       default:
         try {
           Timber::render($layout . '.twig', $field);
@@ -645,7 +551,7 @@ function pdj_twig_data($data){
 
   $data['site_logo_scroll'] = new TimberImage($logo_scroll);
   $data['site_favicon'] = new TimberImage($favicon);
-  
+
   if (has_custom_logo()) {
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $custom_logo_attachment = wp_get_attachment_image_src( $custom_logo_id , 'full' );

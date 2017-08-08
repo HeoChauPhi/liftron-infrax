@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_598543059588f",
-            "label": "Footer Panel",
-            "name": "footer_panel",
+            "label": "Footer",
+            "name": "footer",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -18,9 +18,9 @@
             "layouts": {
                 "5985431623107": {
                     "key": "5985431623107",
-                    "name": "footer_panel_contact_us",
-                    "label": "Footer Panel Contact Us",
-                    "display": "row",
+                    "name": "footer_contact_us",
+                    "label": "Footer Contact Us",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5985432595890",
@@ -90,9 +90,9 @@
                 },
                 "5985435b95893": {
                     "key": "5985435b95893",
-                    "name": "footer_panel_map",
-                    "label": "Footer Panel Map",
-                    "display": "row",
+                    "name": "footer_map",
+                    "label": "Footer Map",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5985436c95894",
@@ -134,34 +134,15 @@
                     ],
                     "min": "",
                     "max": ""
-                }
-            },
-            "button_label": "Add Footer Panel",
-            "min": "",
-            "max": 2
-        },
-        {
-            "key": "field_59443bd272c3e",
-            "label": "Footer Bottom",
-            "name": "footer_bottom",
-            "type": "flexible_content",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layouts": {
-                "59443c32ddbf8": {
-                    "key": "59443c32ddbf8",
-                    "name": "footer_bottom_social",
-                    "label": "Footer Bottom Social",
-                    "display": "row",
+                },
+                "598a0679c3c2e": {
+                    "key": "598a0679c3c2e",
+                    "name": "footer_social",
+                    "label": "Footer Social",
+                    "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_59443d1e72c45",
+                            "key": "field_598a0698c3c2f",
                             "label": "Footer Bottom Social",
                             "name": "footer_bottom_social",
                             "type": "repeater",
@@ -177,10 +158,10 @@
                             "min": 0,
                             "max": 0,
                             "layout": "block",
-                            "button_label": "Add Social",
+                            "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_5985443148488",
+                                    "key": "field_598a06afc3c30",
                                     "label": "Social Icon",
                                     "name": "social_icon",
                                     "type": "font-awesome",
@@ -877,7 +858,7 @@
                                     }
                                 },
                                 {
-                                    "key": "field_5985445548489",
+                                    "key": "field_598a06d1c3c31",
                                     "label": "Social Link",
                                     "name": "social_link",
                                     "type": "url",
@@ -895,55 +876,7 @@
                             ]
                         },
                         {
-                            "key": "field_59443cdf72c42",
-                            "label": "Component Class",
-                            "name": "component_class",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "59443ce372c43": {
-                    "key": "59443ce372c43",
-                    "name": "footer_bottom_copyright",
-                    "label": "Footer Bottom Copyright",
-                    "display": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_594438882fb1e",
-                            "label": "Footer Copyright",
-                            "name": "footer_copyright",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
-                        },
-                        {
-                            "key": "field_59443d1172c44",
+                            "key": "field_598a06f0c3c32",
                             "label": "Component Class",
                             "name": "component_class",
                             "type": "text",
@@ -966,9 +899,9 @@
                     "max": ""
                 }
             },
-            "button_label": "Add Block",
+            "button_label": "Add Footer",
             "min": "",
-            "max": 2
+            "max": 3
         }
     ],
     "location": [
@@ -989,5 +922,5 @@
     "active": 1,
     "description": "",
     "menu_item_level": "all",
-    "modified": 1501906043
+    "modified": 1502218431
 }
