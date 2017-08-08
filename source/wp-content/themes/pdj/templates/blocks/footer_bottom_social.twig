@@ -1,0 +1,7 @@
+<div class="footer-social {{ component_class }}">
+<ul class="social-icons__list">
+{% for item in footer_bottom_social %}
+  <li><a href="{{ item.social_link }}">{{ item.social_icon.element }}</a></li>
+{% endfor %}
+</ul>
+</div>

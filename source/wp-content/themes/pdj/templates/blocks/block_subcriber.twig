@@ -1,0 +1,21 @@
+<div class="block-treatment-process {{ component_class }}">
+  <div class="block-media">
+    <div class="block-image" style="background-image: url({{ background_image.url }})">&#32;</div>
+  </div>
+
+  <div class="block-content">
+    <div class="container">
+      <div class="block-content-inner">
+        <div class="block-header">
+          <h2 class="block-title">{{ subcriber_form_title }}</h2>
+        </div>
+
+        {% if subcriber_form %}
+        <div class="subcriber-form">
+          {{ function('shortcode', '[contact-form-7 id="' ~ subcriber_form ~ '"]') }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

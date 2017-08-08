@@ -1,0 +1,26 @@
+{% block footer %}
+  <footer id="footer" class="footer footer-wrapper">
+    <div id="footer-panel" class="footer-panel footer-panel-wrapper">
+      <div class="container">
+        <div class="row footer__panel--content">
+          {% for key, footer in footer_widget %}
+            {% if key != '_multiwidget' %}
+              {{ function('acfwidget', 'footer_panel', 'footer_widget-' ~ key ) }}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div id="footer-bottom" class="footer-bottom footer-bottom-wrapper">
+      <div class="container">
+        <div class="footer__bottom--content">
+          {% for key, footer in footer_widget %}
+            {% if key != '_multiwidget' %}
+              {{ function('acfwidget', 'footer_bottom', 'footer_widget-' ~ key ) }}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

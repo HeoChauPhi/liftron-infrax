@@ -1,0 +1,19 @@
+<div class="block-content-image {{ component_class }}">
+  <div class="block-media">
+    <div class="block-image" style="background-image: url({{ background_image.url }})">&#32;</div>
+  </div>
+
+  <div class="block-content">
+    <div class="container">
+      <div class="block-header">
+        <h2 class="block-title">{{ block_title }}</h2>
+        <div class="block-description">{{ block_description }}</div>
+      </div>
+      <ul class="block-content-list">
+        {% for item in block_content_list %}
+          <li>{{ item.list_item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

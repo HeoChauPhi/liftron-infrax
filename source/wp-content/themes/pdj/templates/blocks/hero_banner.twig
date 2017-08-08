@@ -1,0 +1,35 @@
+<div  class="hero-banner-wrapper {{ component_class }}" style="min-height: 100vh;">
+  <div class="hero-banner-media">
+    <div class="hero-banner-image" style="background-image: url({{ hero_banner_image.url }});min-height: 100vh;">&#32;</div>
+  </div>
+
+  <div class="hero-banner-body">
+    <div class="container">
+    {% if hero_banner_slogan %}
+      <div class="hero-banner-slogan">{{ hero_banner_slogan }}</div>
+    {% endif %}
+    {% if hero_banner_title %}
+      <div class="hero-banner-title">{{ hero_banner_title }}</div>
+    {% endif %}
+    <a href="#form-subcriber">{{ __('Subcriber', 'pdj_theme') }}</a>
+    </div>  
+  </div>
+
+  {% if block_about_us %}
+  <div class="block-about-us">
+    <div class="container">
+      <div class="row">
+      {% for item in block_about_us %}
+        <div class="about-item col-lg-4">
+          <div class="about-icon">{{ item.about_icon.element }}</div>
+          <div class="about-content">
+            <h4 class="about-title">{{ item.about_title }}</h4>
+            <div class="about-desc">{{ item.about_description }}</div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>

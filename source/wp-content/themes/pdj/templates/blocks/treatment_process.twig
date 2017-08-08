@@ -1,0 +1,31 @@
+<div class="block-treatment-process {{ component_class }}">
+  <div class="block-media">
+    <div class="block-image" style="background-image: url({{ background_image.url }})">&#32;</div>
+  </div>
+
+  <div class="block-content">
+    <div class="container">
+      <div class="block-header">
+        <h2 class="block-title">{{ process_title }}</h2>
+      </div>
+
+      {% if process_slide %}
+      <div class="block-process-slide-wrapper">
+        <div class="block-process-slide">
+        {% for item in process_slide %}
+          <div class="process-item">
+            <div class="process-media" style="background-image: url({{ item.slide_image.url }});">
+              <img src="{{ item.slide_image.url }}">
+            </div>
+            <div class="process-body">
+              <h4 class="process-slide-title">{{ item.slide_title }}</h4>
+              <div class="process-slide-content">{{ item.slide_content }}</div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

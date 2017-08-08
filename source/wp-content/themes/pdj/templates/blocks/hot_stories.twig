@@ -1,0 +1,50 @@
+<div class="block-treatment-process {{ component_class }}">
+  <div class="block-media">
+    <div class="block-image" style="background-image: url({{ background_image.url }})">&#32;</div>
+  </div>
+
+  <div class="block-content">
+    <div class="container">
+      <div class="block-header">
+        <h2 class="block-title">{{ story_title }}</h2>
+        {% if story_proof %}
+        <div class="story-proof">
+          {% for key, item in story_proof.0 %}
+            {% if key == 'proof_before' %}
+              {% set story_proof_title = __('trước', 'pdj_theme') %}
+            {% else %}
+              {% set story_proof_title = __('sau', 'pdj_theme') %}
+            {% endif %}
+
+            <div class="story-proof-item">
+              <img src="{{ item.url }}">
+              <h4>{{ story_proof_title }}</h4>
+            </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if story_list %}
+      <div class="story-proof-sticky">
+      {% for item in story_list %}
+        {% if loop.first %}
+        <div class="story-proof-sticky-item" style="background-image: url({{ story_background_image.url }})">{{ item.story_content }}</div>
+        {% endif %}
+      {% endfor %}
+      <a href="#story-proof-slide">{{ __('Xem tiếp', 'pdj_theme') }}</a>
+      </div>
+
+      <div style="display: none;">
+        <div id="story-proof-slide" class="story-proof-slide-wrapper" style="background-image: url({{ story_background_image.url }})">
+          <div class="story-proof-slide">
+          {% for item in story_list %}
+            <div class="story-proof-item">{{ item.story_content }}</div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

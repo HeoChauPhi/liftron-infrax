@@ -1,0 +1,16 @@
+<div class="layout-wraper">
+  <div class="container">
+    <div class="row">
+    {% if column_first_group_component %}
+      <div class="col-first col-lg-6">
+      {{ function('sub_flexible_content', column_first_group_component) }}
+      </div>
+    {% endif %}
+    {% if column_seccond_group_component %}
+      <div class="col-seccond col-lg-6">
+      {{ function('sub_flexible_content', column_seccond_group_component) }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</div>

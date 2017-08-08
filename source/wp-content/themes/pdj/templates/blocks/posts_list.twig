@@ -1,0 +1,52 @@
+<div class="block block-travel-notice {{ component_class }}">
+  <div class="block-media">
+    <div class="block-image" style="background-image: url({{ background_image.url }})">&#32;</div>
+  </div>
+
+  <div class="block-content">
+    <div class="container">
+      <div class="block-header">
+        <h2 class="block-title">{{ posts_list_title }}</h2>
+        <div class="block-description">{{ posts_list_description }}</div>
+        <a href="#form-subcriber">{{ __('Subcriber', 'pdj_theme') }}</a>
+      </div>
+      {% if posts_list_custom %}
+      <div class="post-list-wrapper">
+        <div class="post-list-slide">
+        {% for post in posts_list_custom %}
+            <div class="post-item">
+              <div class="post-media">
+                {% if post.thumbnail %}
+                <div class="post-image" style="background-image: url({{ post.thumbnail.src }});">
+                  <img src="{{ post.thumbnail.src }}">
+                </div>
+                {% endif %}
+                <h3 class="node-title"><a href="{{ function('get_post_link', post.ID) }}">{{ post.title }}</a></h3>
+              </div>
+              <div class="post-body">
+                <div class="post-content">{{ post.content|truncate(20) }}</div>
+                <a href="#colorbox-post-content-{{ loop.index }}">{{ __('Xem thêm', 'pdj_theme') }}</a>
+              </div>
+              <div style="display: none;">
+                <div id="colorbox-post-content-{{ loop.index }}">
+                  <div class="post-media">
+                    {% if post.thumbnail %}
+                    <div class="post-image" style="background-image: url({{ post.thumbnail.src }});">
+                      <img src="{{ post.thumbnail.src }}">
+                    </div>
+                    {% endif %}
+                  </div>
+                  <div class="post-body">
+                    <h3 class="node-title"><a href="{{ function('get_post_link', post.ID) }}">{{ post.title }}</a></h3>
+                    <div class="post-content">{{ post.content }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

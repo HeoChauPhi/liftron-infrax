@@ -1,0 +1,25 @@
+main {
+  > .layout-wraper,
+  > .block {
+    padding-bottom: rem(80px);
+    padding-top: rem(85px);
+  }
+
+  .block-title {
+    @include opensans;
+    font-size: rem(24px);
+    font-weight: 700;
+    margin-bottom: rem(50px);
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+}
+
+.layout-wraper {
+  .block {
+    > .container {
+      width: auto !important;
+      padding: 0;
+    }
+  }
+}
