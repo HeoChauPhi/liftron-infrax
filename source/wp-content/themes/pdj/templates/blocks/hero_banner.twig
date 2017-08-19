@@ -3,17 +3,19 @@
     <div class="hero-banner-image" style="background-image: url({{ hero_banner_image.url }});min-height: 100vh;">&#32;</div>
   </div>
 
-  <div class="hero-banner-body">
+  {% if block_subscribe %}
+  <div class="block-subscribe">
     <div class="container">
-    {% if hero_banner_slogan %}
-      <div class="hero-banner-slogan">{{ hero_banner_slogan }}</div>
-    {% endif %}
-    {% if hero_banner_title %}
-      <div class="hero-banner-title">{{ hero_banner_title }}</div>
-    {% endif %}
-    <a href="#form-subcriber">{{ __('Subcriber', 'pdj_theme') }}</a>
-    </div>  
+      <div class="form-subscribe-inner">
+        <div class="form-subscribe-header">
+          <a href="#" class="subscribe-button">{{ __('Đăng ký ngay', 'pdj_theme') }}</a>
+          <h2 class="block-title">{{ block_subscribe_title }}</h2>
+        </div>
+        {{ function('shortcode', '[contact-form-7 id="' ~ block_subscribe ~ '"]') }}
+      </div>
+    </div>
   </div>
+  {% endif %}
 
   {% if block_about_us %}
   <div class="block-about-us">

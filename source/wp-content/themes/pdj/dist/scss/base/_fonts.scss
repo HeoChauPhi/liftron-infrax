@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+
 @font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot?foziim');
@@ -8,6 +10,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'UTMNeutra';
+  src: url('../fonts/utm_neutra/UTMNeutra.eot');
+  src: url('../fonts/utm_neutra/UTMNeutra.eot') format('embedded-opentype'),
+       url('../fonts/utm_neutra/UTMNeutra.woff2') format('woff2'),
+       url('../fonts/utm_neutra/UTMNeutra.woff') format('woff'),
+       url('../fonts/utm_neutra/UTMNeutra.ttf') format('truetype'),
+       url('../fonts/utm_neutra/UTMNeutra.svg#UTMNeutra') format('svg');
+}
+
 
 /* @font-face {
   font-family: 'UTM_Caviar';

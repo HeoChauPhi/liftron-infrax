@@ -20,6 +20,14 @@ $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
 $container-large-desktop: 1200px !default;
 
 // Fonts.
+@mixin muli {
+  font-family: 'Muli', sans-serif;
+}
+
+@mixin utm_neutra {
+  font-family: 'UTMNeutra', sans-serif;
+}
+
 @mixin opensans {
   font-family: 'Open Sans', sans-serif;
 }
@@ -28,12 +36,15 @@ $base-font-size: 14px;
 
 // Color.
 $green: #32b663;
-$orange: #ffb300;
+$orange: #e40b0b;
+$yellow: #ffec00;
+$ping: #d9b6a4;
 $black: #000000;
 $white: #ffffff;
 
 $color-primary: $green;
 $color-seccond: $orange;
+$color-third: $yellow;
 
 $gray-33: #333333;
 $gray-66: #666666;

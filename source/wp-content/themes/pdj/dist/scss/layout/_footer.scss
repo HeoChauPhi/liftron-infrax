@@ -1,0 +1,41 @@
+#footer {
+
+}
+
+.footer {
+  color: $black;
+  font-size: rem(23px);
+}
+
+.footer-contact-us {
+  .footer-logo {
+    margin-bottom: rem(60px);
+  }
+}
+
+.footer-social {
+  left: rem(30px);
+  position: fixed;
+  top: 50vh;
+  z-index: 99;
+
+  .social-icons__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      list-style: none;
+
+      a {
+        color: $black;
+        display: block;
+        text-align: center;
+
+        &:hover {
+          color: $color-link;
+        }
+      }
+    }
+  }
+}

@@ -24,8 +24,11 @@ require_once('init/options/option.php');
 if(!is_admin()) {
   // Add scripts
   function ct_libs_scripts() {
-    wp_register_script('moment', ('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'), false, '2.16.0'); 
+    wp_register_script('moment', ('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'), false, '2.16.0');
     wp_enqueue_script('moment');
+
+    wp_register_script('jquery-ui', '//code.jquery.com/ui/1.12.1/jquery-ui.js', false, '1.12.1');
+    wp_enqueue_script('jquery-ui');
 
     wp_register_script('lib-mousewheel', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.mousewheel.js', array('jquery'), FALSE, '3.1.12', TRUE);
     wp_enqueue_script('lib-mousewheel');
@@ -45,8 +48,6 @@ if(!is_admin()) {
     wp_register_script('script', get_stylesheet_directory_uri() . '/dist/js/script.js', FALSE, '1.0.0', TRUE);
     wp_localize_script( 'script', 'paginationAjax', array( 'ajaxurl' => admin_url('admin-ajax.php' )));
     wp_enqueue_script('script');
-    wp_register_script('jquery-ui', ('//code.jquery.com/ui/1.12.1/jquery-ui.js'), false, '1.12.1'); 
-    wp_enqueue_script('jquery-ui');  
   }
   add_action('wp_print_scripts', 'ct_libs_scripts');
 

@@ -374,9 +374,18 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
+        case 'block_why_trust_me':
+          print_r($field);
+
+          try {
+            Timber::render($layout . '.twig', $field);
+          } catch (Exception $e) {
+            echo __('Could not find a twig file for layout type: ', 'pdj_theme') . $layout . '<br>';
+          }
+          break;
 
         default:
-          print_r($field);
+          //print_r($field);
           try {
             Timber::render($layout . '.twig', $field);
           } catch (Exception $e) {

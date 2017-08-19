@@ -1,0 +1,191 @@
+.hero-banner {
+  &-wrapper {
+    position: relative;
+
+    .block-subscribe {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+
+    .form-subscribe-inner {
+      background-image: url('../images/subscribe-bg.png');
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      float: right;
+      max-height: rem(660px);
+      max-width: rem(440px);
+      padding: rem(20px 20px 40px 20px);
+    }
+
+    .form-subscribe-header {
+      @include transform(rotate(-5deg));
+    }
+
+    .subscribe-button {
+      @include utm_neutra;
+      align-content: center;
+      background: $color-third;
+      border-radius: rem(900px);
+      border: rem(6px) solid $color-seccond;
+      color: $color-seccond;
+      display: flex;
+      flex-direction: column;
+      float: right;
+      font-size: rem(17px);
+      height: rem(108px);
+      justify-content: center;
+      margin-left: rem(10px);
+      text-align: center;
+      width: rem(108px);
+
+      animation-duration: 1s;
+      animation-name: hot-sticky;
+      animation-delay: 0;
+      animation-iteration-count: infinite;
+      animation-direction: forward;
+    }
+
+    .block-title {
+      @include utm_neutra;
+      color: $white;
+      font-size: rem(24px);
+      font-weight: 400;
+      line-height: rem(30px);
+      padding: rem(0 15px);
+      text-align: center;
+
+      .title-big {
+        font-size: rem(71px);
+        line-height: rem(71px);
+      }
+
+      .title-medium {
+        font-size: rem(57px);
+        line-height: rem(57px);
+      }
+    }
+
+    .form-subscribe {
+      > br {
+        display: none;
+      }
+
+      .wpcf7-form-control-wrap {
+        display: block;
+        max-width: rem(276px);
+        margin: 0 auto rem(10px) auto;
+
+        > input,
+        > textarea {
+          background-color: $white;
+          border: none;
+          margin: 0;
+          max-height: rem(75px);
+          min-height: rem(35px);
+          padding: rem(5px);
+          width: 100%;
+        }
+      }
+
+      .form-action {
+        display: block;
+        max-width: rem(276px);
+        margin: 0 auto rem(10px) auto;
+
+        .form-notice {
+          color: #fff;
+          float: left;
+          font-size: rem(16px);
+          font-weight: 700;
+          line-height: rem(45px);
+        }
+
+        input[type="submit"] {
+          background-color: $white;
+          border: none;
+          float: right;
+          font-size: rem(16px);
+          font-weight: 700;
+          height: rem(45px);
+          width: rem(70px);
+        }
+
+        .ajax-loader {
+          bottom: rem(-20px);
+          display: block;
+          left: 0;
+          margin: 0 auto;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &-media {
+
+  }
+
+  &-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@keyframes hot-sticky {
+  0% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(1.2));
+  }
+  100% {
+    @include transform(scale(1));
+  }
+}
+
+.block-about-us {
+  background-color: rgba($ping, 0.68);
+  bottom: 0;
+  left: 0;
+  padding: rem(30px 0);
+  position: absolute;
+  right: 0;
+
+  .about-item {
+    display: flex;
+  }
+
+  .about-icon,
+  .about-content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .about-icon {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: rem(42px);
+    justify-content: center;
+    margin-right: rem(10px);
+  }
+
+  .about-content {
+
+  }
+
+  .about-title {
+    font-size: rem(18px);
+    margin: rem(0 0 10px 0);
+  }
+
+  .about-desc {
+    font-size: rem(18px);
+    font-weight: 700;
+  }
+}

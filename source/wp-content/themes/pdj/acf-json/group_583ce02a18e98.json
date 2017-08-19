@@ -47,6 +47,25 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_59933754a6934",
+                            "label": "Block Subscribe Title",
+                            "name": "block_subscribe_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_598a0945aa691",
                             "label": "Block Subscribe",
                             "name": "block_subscribe",
@@ -1647,5 +1666,5 @@
     "active": 1,
     "description": "",
     "menu_item_level": "all",
-    "modified": 1502222857
+    "modified": 1502820201
 }

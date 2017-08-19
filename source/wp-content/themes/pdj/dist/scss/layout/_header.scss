@@ -1,0 +1,16 @@
+#header {
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+
+  body.admin-bar & {
+    top: rem(46px);
+
+    @include breakpoint(783px)  {
+      top: rem(32px);
+    }
+  }
+}
