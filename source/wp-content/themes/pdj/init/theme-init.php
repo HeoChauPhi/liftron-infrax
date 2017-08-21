@@ -374,7 +374,7 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'block_why_trust_me':
+        case 'block_advantage':
           print_r($field);
 
           try {

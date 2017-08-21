@@ -28,6 +28,14 @@ $container-large-desktop: 1200px !default;
   font-family: 'UTMNeutra', sans-serif;
 }
 
+@mixin bebas {
+  font-family: 'VLBEBASNEUEREGULAR', sans-serif;
+}
+
+@mixin bebas_light {
+  font-family: 'VLBEBASNEUELIGHT', sans-serif;
+}
+
 @mixin opensans {
   font-family: 'Open Sans', sans-serif;
 }

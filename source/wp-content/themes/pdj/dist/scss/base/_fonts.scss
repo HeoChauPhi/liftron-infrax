@@ -21,6 +21,26 @@
        url('../fonts/utm_neutra/UTMNeutra.svg#UTMNeutra') format('svg');
 }
 
+@font-face {
+  font-family: 'VLBEBASNEUEREGULAR';
+  src: url('../fonts/bebas/VLBEBASNEUEREGULAR.eot');
+  src: url('../fonts/bebas/VLBEBASNEUEREGULAR.eot') format('embedded-opentype'),
+       url('../fonts/bebas/VLBEBASNEUEREGULAR.woff2') format('woff2'),
+       url('../fonts/bebas/VLBEBASNEUEREGULAR.woff') format('woff'),
+       url('../fonts/bebas/VLBEBASNEUEREGULAR.ttf') format('truetype'),
+       url('../fonts/bebas/VLBEBASNEUEREGULAR.svg#VLBEBASNEUEREGULAR') format('svg');
+}
+
+@font-face {
+    font-family: 'VLBEBASNEUELIGHT';
+    src: url('../fonts/bebas/VLBEBASNEUELIGHT.eot');
+    src: url('../fonts/bebas/VLBEBASNEUELIGHT.eot') format('embedded-opentype'),
+         url('../fonts/bebas/VLBEBASNEUELIGHT.woff2') format('woff2'),
+         url('../fonts/bebas/VLBEBASNEUELIGHT.woff') format('woff'),
+         url('../fonts/bebas/VLBEBASNEUELIGHT.ttf') format('truetype'),
+         url('../fonts/bebas/VLBEBASNEUELIGHT.svg#VLBEBASNEUELIGHT') format('svg');
+}
+
 
 /* @font-face {
   font-family: 'UTM_Caviar';

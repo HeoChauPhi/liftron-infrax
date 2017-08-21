@@ -69,7 +69,7 @@
     }
 
     .form-subscribe {
-      > br {
+      br {
         display: none;
       }
 
@@ -93,7 +93,7 @@
       .form-action {
         display: block;
         max-width: rem(276px);
-        margin: 0 auto rem(10px) auto;
+        margin: 0 auto;
 
         .form-notice {
           color: #fff;
@@ -123,6 +123,85 @@
         }
       }
     }
+
+    @include breakpoint(desktop_wide_height) {
+      .form-subscribe-inner {
+        background-size: 100% 100%;
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+        padding-bottom: rem(20px);
+      }
+
+      .form-subscribe-header {
+        @include transform(rotate(0));
+      }
+
+      .subscribe-button {
+        display: none;
+      }
+
+      .block-title {
+        font-size: rem(20px);
+        margin-bottom: rem(20px);
+
+        .title-big {
+          color: $color-third;
+          font-size: inherit;
+          line-height: inherit;
+        }
+
+        .title-medium {
+          color: $color-third;
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+    }
+
+    .block-subscribe-fixed {
+      &.block-subscribe {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: auto;
+        z-index: 9;
+      }
+
+      .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      .form-subscribe-inner {
+        display: block;
+        float: none;
+        max-height: none;
+        max-width: none;
+      }
+
+      .subscribe-button {
+        display: none;
+      }
+
+      .form-subscribe-header {
+
+      }
+
+      .form-subscribe {
+        text-align: center;
+
+        .form-row {
+          display: inline-block;
+          margin: rem(0 5px);
+        }
+
+        .hide-on-fixed {
+          display: none;
+        }
+      }
+    }
   }
 
   &-media {
@@ -136,18 +215,6 @@
   }
 }
 
-@keyframes hot-sticky {
-  0% {
-    @include transform(scale(1));
-  }
-  50% {
-    @include transform(scale(1.2));
-  }
-  100% {
-    @include transform(scale(1));
-  }
-}
-
 .block-about-us {
   background-color: rgba($ping, 0.68);
   bottom: 0;
@@ -158,6 +225,11 @@
 
   .about-item {
     display: flex;
+    margin-bottom: rem(20px);
+
+    @include breakpoint(tablet) {
+      margin-bottom: 0;
+    }
   }
 
   .about-icon,

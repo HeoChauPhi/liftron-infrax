@@ -1,0 +1,29 @@
+<div class="block-why-trust-me {{ component_class }}">
+  <h2 class="block-title">{{ block_title }}</h2>
+  <div class="block-content">
+    <div class="row row-eq-height">
+      {% if image_ads %}
+      <div class="block-content-ads col-lg-6">
+        <img class="image-ads-feature" src="{{ image_ads.url }}">
+        <img class="image-ads-sticky" src="{{ image_ads_hot_notice.url }}">
+      </div>
+      {% endif %}
+      
+      <div class="block-content-info col-lg-6">
+        {% if content_title %}
+        <h3 class="block-content-info-title">{{ content_title }}</h3>
+        {% endif %}
+        
+        {% if content_body %}
+        <div class="block-content-info-body">{{ content_body }}</div>
+        {% endif %}
+
+        {% if content_image %}
+        <div class="block-content-info-media">
+          <img src="{{ content_image.url }}"
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

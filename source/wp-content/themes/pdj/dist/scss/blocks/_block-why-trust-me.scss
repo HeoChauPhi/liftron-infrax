@@ -1,0 +1,89 @@
+.block-why-trust-me {
+  position: relative;
+
+  h2.block-title {
+    @include muli;
+    font-size: rem(30px);
+    font-weight: normal;
+
+    .title-big {
+      font-size: rem(72px);
+    }
+
+    .title-medium {
+      font-size: rem(48px);
+    }
+  }
+
+  .block-content {
+    > .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .block-content-ads,
+  .block-content-info {
+    padding: 0;
+  }
+
+  .block-content-ads {
+    position: relative;
+  }
+
+  .image-ads-feature {
+    height: auto;
+    width: 100%;
+  }
+
+  .image-ads-sticky {
+    max-width: 40%;
+    position: absolute;
+    right: 15%;
+    top: 18%;
+
+    animation-duration: 1s;
+    animation-name: hot-sticky;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: forward;
+  }
+
+  .block-content-info {
+    padding: rem(0 20px 20px);
+    position: relative;
+  }
+
+  .block-content-info-title {
+    @include bebas;
+    font-size: rem(36px);
+    margin: rem(0 0 10px 0);
+
+    span {
+      @include bebas_light;
+    }
+  }
+
+  .block-content-info-body {
+    @include muli;
+    font-size: rem(18px);
+  }
+
+  .block-content-info-media {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(1550px) {
+    .block-content-info {
+      padding: rem(85px 25px 0 25px);
+    }
+  }
+}
