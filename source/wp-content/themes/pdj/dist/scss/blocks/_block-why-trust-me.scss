@@ -3,8 +3,15 @@
 
   h2.block-title {
     @include muli;
-    font-size: rem(30px);
-    font-weight: normal;
+    bottom: rem(20px);
+    font-size: rem(30px);    
+    font-weight: 700;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    z-index: 9;
 
     .title-big {
       font-size: rem(72px);
@@ -28,12 +35,17 @@
   }
 
   .block-content-ads {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
+    margin-bottom: rem(30px);
   }
 
   .image-ads-feature {
     height: auto;
     width: 100%;
+    visibility: hidden;
   }
 
   .image-ads-sticky {
@@ -50,7 +62,7 @@
   }
 
   .block-content-info {
-    padding: rem(0 20px 20px);
+    padding: rem(0 20px 0 20px);
     position: relative;
   }
 
@@ -70,10 +82,7 @@
   }
 
   .block-content-info-media {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
+    margin: rem(20px -20px 0 -20px);
 
     img {
       height: auto;
@@ -84,6 +93,16 @@
   @include breakpoint(1550px) {
     .block-content-info {
       padding: rem(85px 25px 0 25px);
+    }
+
+    .block-content-info-media {
+      margin: rem(25px -25px 0 -25px);
+    }
+  }
+
+  @include breakpoint(992px) {
+    .block-content-ads {
+      margin-bottom: 0;
     }
   }
 }

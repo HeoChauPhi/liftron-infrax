@@ -16567,15 +16567,13 @@ button.close {
 .title-center {
   text-align: center; }
 
-.row-eq-height {
+/* .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-
+  display:         flex;
+  flex-wrap: wrap;
+} */
 html {
   font-size: 14px;
   line-height: 1.5; }
@@ -17100,8 +17098,15 @@ main .block-title {
   position: relative; }
   .block-why-trust-me h2.block-title {
     font-family: 'Muli', sans-serif;
+    bottom: 1.42857rem;
     font-size: 2.14286rem;
-    font-weight: normal; }
+    font-weight: 700;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    z-index: 9; }
     .block-why-trust-me h2.block-title .title-big {
       font-size: 5.14286rem; }
     .block-why-trust-me h2.block-title .title-medium {
@@ -17113,10 +17118,15 @@ main .block-title {
   .block-why-trust-me .block-content-info {
     padding: 0; }
   .block-why-trust-me .block-content-ads {
-    position: relative; }
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 2.14286rem; }
   .block-why-trust-me .image-ads-feature {
     height: auto;
-    width: 100%; }
+    width: 100%;
+    visibility: hidden; }
   .block-why-trust-me .image-ads-sticky {
     max-width: 40%;
     position: absolute;
@@ -17133,7 +17143,7 @@ main .block-title {
     -webkit-animation-direction: forward;
     animation-direction: forward; }
   .block-why-trust-me .block-content-info {
-    padding: 0rem 1.42857rem 1.42857rem;
+    padding: 0rem 1.42857rem 0rem 1.42857rem;
     position: relative; }
   .block-why-trust-me .block-content-info-title {
     font-family: 'VLBEBASNEUEREGULAR', sans-serif;
@@ -17145,13 +17155,15 @@ main .block-title {
     font-family: 'Muli', sans-serif;
     font-size: 1.28571rem; }
   .block-why-trust-me .block-content-info-media {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0; }
+    margin: 1.42857rem -1.42857rem 0rem -1.42857rem; }
     .block-why-trust-me .block-content-info-media img {
       height: auto;
       width: 100%; }
   @media (min-width: 1550px) {
     .block-why-trust-me .block-content-info {
-      padding: 6.07143rem 1.78571rem 0rem 1.78571rem; } }
+      padding: 6.07143rem 1.78571rem 0rem 1.78571rem; }
+    .block-why-trust-me .block-content-info-media {
+      margin: 1.78571rem -1.78571rem 0rem -1.78571rem; } }
+  @media (min-width: 992px) {
+    .block-why-trust-me .block-content-ads {
+      margin-bottom: 0; } }

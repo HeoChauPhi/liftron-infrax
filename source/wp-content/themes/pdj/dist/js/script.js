@@ -197,6 +197,55 @@
     }
   }
 
+  function equerheight($parent, $compare = 'max') {
+    var parent_class = $($parent);
+
+    parent_class.each(function() {
+      var array_height = [];
+      var eq_height = '';
+
+      var main_height = $(this).find('.eq-main-height').outerHeight(true);
+
+      $(this).find('.col-eq-height').each(function() {
+        array_height.push($(this).outerHeight(true));
+      });
+
+      if (main_height !== null) {
+        $(this).find('.col-eq-height').css('min-height', main_height);
+      } else if ($compare == 'min') {
+        var eq_height = Math.min.apply(Math,array_height);
+        $(this).find('.col-eq-height').css('max-height', eq_height);
+      } else if ($compare == 'max') {
+        var eq_height = Math.max.apply(Math,array_height);
+        $(this).find('.col-eq-height').css('min-height', eq_height);
+      }
+    });
+
+    $(window).resize(function() {
+      parent_class.each(function() {
+        $(this).find('.col-eq-height').css({'min-height': 'unset', 'max-height': 'unset'});
+        var array_height = [];
+        var eq_height = '';
+
+        var main_height = $(this).find('.eq-main-height').outerHeight(true);
+
+        $(this).find('.col-eq-height').each(function() {
+          array_height.push($(this).outerHeight(true));
+        });
+
+        if (main_height !== null) {
+          $(this).find('.col-eq-height').css('min-height', main_height);
+        } else if ($compare == 'min') {
+          var eq_height = Math.min.apply(Math,array_height);
+          $(this).find('.col-eq-height').css('max-height', eq_height);
+        } else if ($compare == 'max') {
+          var eq_height = Math.max.apply(Math,array_height);
+          $(this).find('.col-eq-height').css('min-height', eq_height);
+        }
+      });
+    });
+  }
+
   /* Functions Call */
   $(document).ready(function() {
     $('.ajax-pagination .pager-item a').on('click', pagination_ajax);
@@ -209,14 +258,15 @@
   });
 
   $(window).load(function() {
-    // Call to function
+    // Call to 
+    equerheight('.block-why-trust-me', 'min');
+
   });
 
   $(window).scroll(function() {
     // Call to function
     navigation_fixed();
     //block_subscribe();
-    footer_social();
   });
 
   $(window).resize(function() {
