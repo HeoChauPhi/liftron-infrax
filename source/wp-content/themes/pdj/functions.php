@@ -24,25 +24,25 @@ require_once('init/options/option.php');
 if(!is_admin()) {
   // Add scripts
   function ct_libs_scripts() {
-    wp_register_script('moment', ('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'), false, '2.16.0');
+    wp_register_script('moment', ('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'), array('jquery'), '2.16.0', TRUE);
     wp_enqueue_script('moment');
 
-    wp_register_script('jquery-ui', '//code.jquery.com/ui/1.12.1/jquery-ui.js', false, '1.12.1');
+    wp_register_script('jquery-ui', '//code.jquery.com/ui/1.12.1/jquery-ui.js', false, '1.12.1', TRUE);
     wp_enqueue_script('jquery-ui');
 
-    wp_register_script('lib-mousewheel', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.mousewheel.js', array('jquery'), FALSE, '3.1.12', TRUE);
+    wp_register_script('lib-mousewheel', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.mousewheel.js', array('jquery'), '3.1.12', TRUE);
     wp_enqueue_script('lib-mousewheel');
 
-    wp_register_script('lib-slick', get_stylesheet_directory_uri() . '/dist/js/libs/slick.js', array('jquery'), FALSE, '0.7.0', TRUE);
+    wp_register_script('lib-slick', get_stylesheet_directory_uri() . '/dist/js/libs/slick.js', array('jquery'), '0.7.0', TRUE);
     wp_enqueue_script('lib-slick');
 
-    wp_register_script('lib-matchHeight', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.matchHeight-min.js', array('jquery'), FALSE, '0.7.0', TRUE);
+    wp_register_script('lib-matchHeight', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.matchHeight-min.js', array('jquery'), '0.7.0', TRUE);
     wp_enqueue_script('lib-matchHeight');
 
-    wp_register_script('lib-daterangepicker', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.daterangepicker.js', array('jquery'),  FALSE, '0.15.0', TRUE);
+    wp_register_script('lib-daterangepicker', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.daterangepicker.js', array('jquery'), '0.15.0', TRUE);
     wp_enqueue_script('lib-daterangepicker');
 
-    wp_register_script('lib-select2', get_stylesheet_directory_uri() . '/dist/js/libs/select2.min.js', array('jquery'),  FALSE, '4.0.3', TRUE);
+    wp_register_script('lib-select2', get_stylesheet_directory_uri() . '/dist/js/libs/select2.min.js', array('jquery'), '4.0.3', TRUE);
     wp_enqueue_script('lib-select2');
 
     wp_register_script('script', get_stylesheet_directory_uri() . '/dist/js/script.js', FALSE, '1.0.0', TRUE);
