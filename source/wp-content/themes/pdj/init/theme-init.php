@@ -1,4 +1,9 @@
 <?php
+// Load packages from Composer
+if ( file_exists( __DIR__ . '/wp-content/plugins/timber-library/vendor/autoload.php')) {
+  require_once( __DIR__  . '/wp-content/plugins/timber-library/vendor/autoload.php');
+}
+
 $timber = new \Timber\Timber();
 
 use Timber\Timber;
@@ -9,6 +14,15 @@ require_once dirname( __FILE__ ) . '/theme-support.php';
 
 // Get custom function template with Timber
 Timber::$dirname = array('templates', 'templates/blocks', 'templates/shortcode', 'templates/pages', 'templates/layouts', 'templates/views');
+/*$template_locations = ['templates', 'templates/blocks', 'templates/shortcode', 'templates/pages', 'templates/layouts', 'templates/views'];
+if ( is_array( Timber::$dirname ) ) {
+  Timber::$dirname = array_merge( Timber::$dirname, $template_locations );
+} elseif ( !empty( Timber::$dirname ) ) {
+  Timber::$dirname = array_unshift( $template_locations, Timber::$dirname );
+} else {
+  Timber::$dirname = $template_locations;
+}*/
+
 
 /**
  *
@@ -374,8 +388,8 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'block_advantage':
-          print_r($field);
+        case 'block_gallery':
+          //print_r($field);
 
           try {
             Timber::render($layout . '.twig', $field);
@@ -386,6 +400,7 @@ function flexible_content($name) {
 
         default:
           //print_r($field);
+
           try {
             Timber::render($layout . '.twig', $field);
           } catch (Exception $e) {

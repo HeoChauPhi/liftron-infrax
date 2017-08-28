@@ -1,0 +1,21 @@
+<div class="block-advantage {{ component_class }}">
+<div class="block-bg-media block-bg-image" style="background-image: url({{ background_images.url }});">&#32;</div>
+<div class="block-content">
+  <div  class="container">
+    <h2 class="block-title">{{ block_title }}</h2>
+    <div class="advantage-list">
+    {% for item in advantage_list %}
+      {% if item.make_sticky_item %}
+        {% set item_class = ' advantage-sticky-item' %}
+      {% else %}
+        {% set item_class = '' %}
+      {% endif %}
+      <div class="advantage-item{{ item_class }}">
+        <h3 class="advantage-item-title">{{ item.item_title }}</h3>
+        <div class="advantage-item-content">{{ item.item_content }}</div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+</div>

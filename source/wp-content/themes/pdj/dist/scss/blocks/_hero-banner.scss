@@ -57,6 +57,10 @@
       padding: rem(0 15px);
       text-align: center;
 
+      &:before {
+        display: none;
+      }
+
       .title-big {
         font-size: rem(71px);
         line-height: rem(71px);

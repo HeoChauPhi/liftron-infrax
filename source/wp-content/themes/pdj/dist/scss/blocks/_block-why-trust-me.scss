@@ -3,15 +3,25 @@
 
   h2.block-title {
     @include muli;
-    bottom: rem(20px);
+    background-image: -webkit-linear-gradient(#a5142e 30%, #f97100 70%, #a5142e 85%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    bottom: rem(30px);
     font-size: rem(30px);    
-    font-weight: 700;
+    font-style: italic;
+    font-weight: 900;
     left: 0;
     margin: 0;
     position: absolute;
     right: 0;
     text-align: center;
-    z-index: 9;
+    text-transform: capitalize;
+    z-index: 1;
+
+    &.block-title-shadow {
+      @include text-shadow(0px -2px 0px $black);
+      background: none;
+    }
 
     .title-big {
       font-size: rem(72px);
@@ -62,6 +72,7 @@
   }
 
   .block-content-info {
+    overflow: hidden;
     padding: rem(0 20px 0 20px);
     position: relative;
   }
@@ -69,7 +80,7 @@
   .block-content-info-title {
     @include bebas;
     font-size: rem(36px);
-    margin: rem(0 0 10px 0);
+    margin: rem(10px 0);
 
     span {
       @include bebas_light;

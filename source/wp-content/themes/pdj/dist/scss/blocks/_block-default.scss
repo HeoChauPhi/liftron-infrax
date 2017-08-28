@@ -6,12 +6,23 @@ main {
   }
 
   .block-title {
-    @include opensans;
-    font-size: rem(24px);
-    font-weight: 700;
+    @include muli;
+    color: $white;
+    font-size: rem(26px);
+    font-weight: 600;
     margin-bottom: rem(50px);
     margin-top: 0;
+    text-align: center;
     text-transform: uppercase;
+
+    &:before {
+      background-color: $white;
+      content: "";
+      display: block;
+      height: rem(5px);
+      margin: 0 auto rem(25px);
+      width: 10%;
+    }
   }
 }
 
@@ -22,4 +33,16 @@ main {
       padding: 0;
     }
   }
+}
+
+.block-bg-media {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }

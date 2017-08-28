@@ -16,7 +16,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -16818,16 +16818,36 @@ main > .block {
   padding-top: 6.07143rem; }
 
 main .block-title {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.71429rem;
-  font-weight: 700;
+  font-family: 'Muli', sans-serif;
+  color: #ffffff;
+  font-size: 1.85714rem;
+  font-weight: 600;
   margin-bottom: 3.57143rem;
   margin-top: 0;
+  text-align: center;
   text-transform: uppercase; }
+  main .block-title:before {
+    background-color: #ffffff;
+    content: "";
+    display: block;
+    height: 0.35714rem;
+    margin: 0 auto 1.78571rem;
+    width: 10%; }
 
 .layout-wraper .block > .container {
   width: auto !important;
   padding: 0; }
+
+.block-bg-media {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1; }
 
 .article-4-cols {
   margin: 0rem -0.71429rem; }
@@ -16921,6 +16941,8 @@ main .block-title {
     line-height: 2.14286rem;
     padding: 0rem 1.07143rem;
     text-align: center; }
+    .hero-banner-wrapper .block-title:before {
+      display: none; }
     .hero-banner-wrapper .block-title .title-big {
       font-size: 5.07143rem;
       line-height: 5.07143rem; }
@@ -17098,15 +17120,23 @@ main .block-title {
   position: relative; }
   .block-why-trust-me h2.block-title {
     font-family: 'Muli', sans-serif;
-    bottom: 1.42857rem;
+    background-image: -webkit-linear-gradient(#a5142e 30%, #f97100 70%, #a5142e 85%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    bottom: 2.14286rem;
     font-size: 2.14286rem;
-    font-weight: 700;
+    font-style: italic;
+    font-weight: 900;
     left: 0;
     margin: 0;
     position: absolute;
     right: 0;
     text-align: center;
-    z-index: 9; }
+    text-transform: capitalize;
+    z-index: 1; }
+    .block-why-trust-me h2.block-title.block-title-shadow {
+      text-shadow: 0px -2px 0px #000000;
+      background: none; }
     .block-why-trust-me h2.block-title .title-big {
       font-size: 5.14286rem; }
     .block-why-trust-me h2.block-title .title-medium {
@@ -17143,12 +17173,13 @@ main .block-title {
     -webkit-animation-direction: forward;
     animation-direction: forward; }
   .block-why-trust-me .block-content-info {
+    overflow: hidden;
     padding: 0rem 1.42857rem 0rem 1.42857rem;
     position: relative; }
   .block-why-trust-me .block-content-info-title {
     font-family: 'VLBEBASNEUEREGULAR', sans-serif;
     font-size: 2.57143rem;
-    margin: 0rem 0rem 0.71429rem 0rem; }
+    margin: 0.71429rem 0rem; }
     .block-why-trust-me .block-content-info-title span {
       font-family: 'VLBEBASNEUELIGHT', sans-serif; }
   .block-why-trust-me .block-content-info-body {
@@ -17167,3 +17198,68 @@ main .block-title {
   @media (min-width: 992px) {
     .block-why-trust-me .block-content-ads {
       margin-bottom: 0; } }
+
+.block-advantage {
+  padding-top: 7.14286rem;
+  position: relative; }
+  .block-advantage:before {
+    background-image: -owg-radial-gradient(circle, #ffaf62, #ffb064);
+    background-image: -webkit-radial-gradient(circle, #ffaf62, #ffb064);
+    background-image: -moz-radial-gradient(circle, #ffaf62, #ffb064);
+    background-image: -o-radial-gradient(circle, #ffaf62, #ffb064);
+    background-image: radial-gradient(circle, #ffaf62, #ffb064);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -2; }
+  .block-advantage .block-bg-image {
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 60% auto; }
+  .block-advantage .advantage-list .advantage-item {
+    margin: 0 auto 1.42857rem auto;
+    max-width: 35.71429rem; }
+  .block-advantage .advantage-list .advantage-item-title {
+    font-family: 'VLBEBASNEUEREGULAR', sans-serif;
+    background-image: url(../images/bg-title.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+    color: #ffffff;
+    font-size: 1.42857rem;
+    line-height: 4.28571rem;
+    min-height: 4.28571rem;
+    text-align: center;
+    text-indent: 3.57143rem; }
+  .block-advantage .advantage-list .advantage-sticky-item .advantage-item-title {
+    background-position: bottom center; }
+  .block-advantage .advantage-list .advantage-item-content {
+    color: #ffffff;
+    font-size: 1.14286rem;
+    font-weight: 600; }
+  @media (min-width: 768px) {
+    .block-advantage .advantage-list .advantage-item {
+      max-width: 21.42857rem; }
+      .block-advantage .advantage-list .advantage-item:nth-of-type(2n + 1) {
+        clear: both;
+        float: left; }
+      .block-advantage .advantage-list .advantage-item:nth-of-type(2n + 2) {
+        float: right; }
+      .block-advantage .advantage-list .advantage-item:nth-of-type(5n + 5) {
+        clear: both;
+        float: none;
+        margin-left: auto;
+        margin-right: auto; } }
+  @media (min-width: 1024px) {
+    .block-advantage .advantage-list .advantage-item {
+      margin-bottom: 3.21429rem;
+      max-width: 26.42857rem; }
+    .block-advantage .advantage-list .advantage-item-title {
+      font-size: 1.85714rem;
+      line-height: 6.07143rem;
+      min-height: 6.07143rem; }
+    .block-advantage .advantage-list .advantage-item-content {
+      font-size: 1.28571rem; } }

@@ -1,0 +1,121 @@
+<div class="block-gallery {{ component_class }}">
+<div class="block-content">
+  <div  class="container">
+    {% for item in gallery_media %}
+      {% if loop.first %}
+        {% set item_class = ' block-gallery-feature' %}
+        {% set feature_title = '1' %}
+      {% else %}
+        {% set item_class = '' %}
+        {% set feature_title = '' %}
+      {% endif %}
+
+      {% if item.make_slide %}
+        {% if item.media_type == 'images' %}
+          {% set item_slide_class = ' js-slide-one-item' %}
+        {% else %}
+          {% set item_slide_class = ' js-slide-video' %}
+        {% endif %}
+      {% else %}
+        {% set item_slide_class = '' %}
+      {% endif %}
+
+      <div class="block-gallery-item{{ item_class }}">
+        <div class="gallery-item-media{{ item_slide_class }}">
+        {% if item.media_type == 'images' %}
+
+          {% if item_class %}
+            <div class="image-item" style="background-image: url({{ item.media_image_list.0.url }});">&#32;</div>
+          {% else %}
+            {% for image in item.media_image_list %}
+            <div class="slide-image-item" style="background-image: url({{ image.url }});">&#32;</div>
+            {% endfor %}
+          {% endif %}
+
+        {% else %}
+
+          {% if item_class %}
+            {% set video_result = function('get_id_embed', item.video_link_list.0.video_link) %}
+            <div class="block-video__iframe" style="min-height: 100%;">
+              {% if video_result.video_type == 'youtube' %}
+              <div class="background-video"></div>
+              <script type="text/javascript">
+                (function($) {
+                  $(document).ready(function(){
+                    var tag = document.createElement('script');
+
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    var video_width = $('.block-video__iframe').outerWidth(true);
+                    var video_height = $('.block-video__iframe').outerHeight(true);
+
+                    $('.background-video').YTPlayer({
+                      videoId: '{{ video_result.video_id }}', // toy robot in space is a good default, no?
+                      mute: true,
+                      repeat: true,
+                      width: video_width,
+                      pauseOnScroll: true,
+                      fitToBackground: false,
+                      callback: function() {
+                        videoCallbackEvents();
+                      },
+                      /*playerVars: {
+                        modestbranding: 0,
+                        autoplay: 1,
+                        controls: 0,
+                        showinfo: 0,
+                        wmode: 'transparent',
+                        branding: 0,
+                        rel: 0,
+                        autohide: 0,
+                        origin: window.location.origin
+                      }*/
+                    });
+
+                    var videoCallbackEvents = function() {
+                      var player = $('.background-video').data('ytPlayer').player;
+                    
+                      $(window).scroll(function() {
+                        var window_scroll_top = $(window).scrollTop();
+                        var frame_offset = $('.block-video__iframe').offset();
+                        var max_scroll = frame_offset.top + video_height;
+
+                        if (max_scroll > window_scroll_top > frame_offset.top) {
+                          player.playVideo();
+                        } else {
+                          player.pauseVideo();
+                        }
+                      });
+                    }
+                  });
+                })(jQuery);
+              </script>
+              {% else %}
+              <iframe src="//player.vimeo.com/video/{{ video_result.video_id }}?loop=1&#38;color=ffffff&#38;byline=0&#38;portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              {% endif %}
+            </div>
+          {% else %}
+            {% for video in item.video_link_list %}
+            <div class="slide-video-item">
+              {% set video_result = function('get_id_embed', video.video_link) %}
+              {% if video_result.video_type == 'youtube' %}
+                <iframe class="video-frame" frameborder="0" allowfullscreen="1" title="YouTube video player" width="100%" height="100%" src="//www.youtube.com/embed/{{ video_result.video_id }}?modestbranding=1&#38;rel=0&#38;autoplay=0&#38;controls=1&#38;showinfo=0&#38;loop=0&#38;fs=0&#38;autohide=0&#38;&#38;enablejsapi=1"></iframe>
+              {% else %}
+                <iframe src="//player.vimeo.com/video/{{ video_result.video_id }}?loop=1&#38;color=ffffff&#38;byline=0&#38;portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              {% endif %}
+            </div>
+            {% endfor %}
+          {% endif %}
+
+        {% endif %}
+        </div>
+      {% if feature_title %}
+        <h2 class="block-title">{{ block_title }}</h2>
+      {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
