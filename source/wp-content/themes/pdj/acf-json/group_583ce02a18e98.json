@@ -1181,6 +1181,30 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_59a44ce26c22a",
+                            "label": "Background Images",
+                            "name": "background_images",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_598a0f17aa6a2",
                             "label": "Block Title",
                             "name": "block_title",
@@ -1214,7 +1238,7 @@
                             },
                             "collapsed": "",
                             "min": 0,
-                            "max": 0,
+                            "max": 3,
                             "layout": "block",
                             "button_label": "Add Media",
                             "sub_fields": [
@@ -1320,25 +1344,6 @@
                                             "height": 200
                                         }
                                     ]
-                                },
-                                {
-                                    "key": "field_598a108baa6a8",
-                                    "label": "Make Slide",
-                                    "name": "make_slide",
-                                    "type": "true_false",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "Check it if you want make gallery as slide. Uncheck will be disable only medias number one.",
-                                    "default_value": 0,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
                                 }
                             ]
                         },
@@ -1666,5 +1671,5 @@
     "active": 1,
     "description": "",
     "menu_item_level": "all",
-    "modified": 1502820201
+    "modified": 1503940790
 }

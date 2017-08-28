@@ -388,7 +388,7 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'block_gallery':
+        case 'block_faq':
           //print_r($field);
 
           try {
@@ -482,7 +482,7 @@ function get_id_embed($url) {
   $video_url = preg_match_url($url);
   $parsed = parse_url($video_url);
 
-  if (strpos($parsed['host'], 'youtube') !== false) {
+  if ((strpos($parsed['host'], 'youtube') !== false) || (strpos($parsed['host'], 'youtu.be') !== false)) {
     $pattern =
         '%^# Match any youtube URL
         (?:https?://)?  # Optional scheme. Either http or https

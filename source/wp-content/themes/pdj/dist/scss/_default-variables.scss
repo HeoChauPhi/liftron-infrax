@@ -36,6 +36,14 @@ $container-large-desktop: 1200px !default;
   font-family: 'VLBEBASNEUELIGHT', sans-serif;
 }
 
+@mixin bebas_thin {
+  font-family: 'VLBEBASNEUETHIN', sans-serif;
+}
+
+@mixin bebas_book {
+  font-family: 'VLBEBASNEUEBOOK', sans-serif;
+}
+
 @mixin opensans {
   font-family: 'Open Sans', sans-serif;
 }

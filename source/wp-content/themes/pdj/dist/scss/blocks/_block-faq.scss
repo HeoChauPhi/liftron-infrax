@@ -1,0 +1,30 @@
+.block-faq {
+  background-color: #ecd8cd;
+  padding: rem(100px 0);
+
+  .block-title {
+    color: $black;
+
+    &:before {
+      background-color: $black;
+    }
+  }
+
+  .block-faq-wrapper {
+    padding: 0 20%;
+  }
+
+  .faq-question {
+    @include bebas_book;
+    background-color: $white;
+    cursor: pointer;
+    font-size: rem(40px);
+    padding: rem(20px 10px 10px 10px);
+    text-align: center;
+  }
+
+  .faq-answer {
+    display: none;
+    font-size: rem(20px);
+  }
+}

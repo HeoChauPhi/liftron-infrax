@@ -1,0 +1,160 @@
+.block-gallery {
+  background-color: #ecd8cd;
+  margin-bottom: rem(140px);
+  padding: rem(80px 0 150px 0);
+  position: relative;
+  z-index: 2;
+
+  &:before {
+    //border-right: 100vw solid transparent;
+    border-top: rem(140px) solid #ECD8CD;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 0;
+  }
+
+  + [class*="block-"] {
+    margin-top: rem(-140px);
+    padding-top: rem(140px);
+    z-index: 1;
+  }
+
+  // Block Title and BG Feature
+  .block-bg-media {
+    z-index: 0;
+  }
+
+  .block-title {
+    @include bebas;
+    bottom: 0;
+    color: $black;
+    font-size: rem(83px);
+    font-weight: 400;
+    left: 0;
+    padding: 0 10%;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+
+    &:before {
+      background-color: $black;
+      width: 30%;
+    }
+  }
+
+  // Layout
+  .block-gallery-header,
+  .block-gallery-content {
+    position: relative;
+  }
+
+  @include breakpoint(tablet) {
+    .block-gallery-header,
+    .block-gallery-content {
+      width: 50%;
+    }
+
+    .block-gallery-header {
+      float: left;
+    }
+
+    .block-gallery-content {
+      float: right;
+    }
+  }
+
+  .block-gallery-item {
+    height: rem(300px);
+
+    // Slick Slider
+    .slide-image-item,
+    .slide-video-item {
+      display: none;
+
+      &.slick-slide {
+        display: block;
+      }
+    }
+
+    .slide-image-item {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: rem(300px);
+    }
+
+    .slide-video-item {
+      iframe {
+        height: rem(300px);
+        margin: 0;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      height: rem(340px);
+
+      .slide-image-item {
+        height: rem(340px);
+      }
+
+      .slide-video-item {
+        iframe {
+          height: rem(340px);
+        }
+      }
+    }
+
+    // Slick Arrow
+    .gallery-item-media {
+      overflow-x: hidden;
+      position: relative;
+
+      @include breakpoint(tablet) {
+        &:hover {
+          .slick-arrow {
+            @include transition(all 0.5s ease);
+          }
+
+          .slick-prev {
+            left: 0;
+          }
+
+          .slick-next {
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      bottom: 50%;
+      margin-bottom: rem(-25px);
+      position: absolute;
+      z-index: 5;
+
+      &.slick-prev {
+        left: 0;
+      }
+
+      &.slick-next {
+        right: 0;
+      }
+
+      @include breakpoint(tablet) {
+        @include transition(all 0.5s ease);
+
+        &.slick-prev {
+          left: rem(-30px);
+        }
+
+        &.slick-next {
+          right: rem(-30px);
+        }
+      }
+    }
+  }
+}

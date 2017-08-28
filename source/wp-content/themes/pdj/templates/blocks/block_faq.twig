@@ -1,0 +1,20 @@
+<div class="block-faq {{ component_class }}">
+  <div class="block-content">
+    <div class="container">
+      <div class="block-header">
+        <h2 class="block-title">{{ block_title }}</h2>
+      </div>
+
+      {% if faq_list %}
+      <div class="block-faq-wrapper">
+        <div class="block-faq-list">
+        {% for item in faq_list %}
+          <h4 class="faq-question">{{ item.question }}</h4>
+          <div class="faq-answer">{{ item.answer }}</div>
+        {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

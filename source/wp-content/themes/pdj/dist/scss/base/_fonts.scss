@@ -41,6 +41,26 @@
          url('../fonts/bebas/VLBEBASNEUELIGHT.svg#VLBEBASNEUELIGHT') format('svg');
 }
 
+@font-face {
+    font-family: 'VLBEBASNEUEBOOK';
+    src: url('../fonts/bebas/VLBEBASNEUEBOOK.eot');
+    src: url('../fonts/bebas/VLBEBASNEUEBOOK.eot') format('embedded-opentype'),
+         url('../fonts/bebas/VLBEBASNEUEBOOK.woff2') format('woff2'),
+         url('../fonts/bebas/VLBEBASNEUEBOOK.woff') format('woff'),
+         url('../fonts/bebas/VLBEBASNEUEBOOK.ttf') format('truetype'),
+         url('../fonts/bebas/VLBEBASNEUEBOOK.svg#VLBEBASNEUEBOOK') format('svg');
+}
+
+@font-face {
+    font-family: 'VLBEBASNEUETHIN';
+    src: url('../fonts/bebas/VLBEBASNEUETHIN.eot');
+    src: url('../fonts/bebas/VLBEBASNEUETHIN.eot') format('embedded-opentype'),
+         url('../fonts/bebas/VLBEBASNEUETHIN.woff2') format('woff2'),
+         url('../fonts/bebas/VLBEBASNEUETHIN.woff') format('woff'),
+         url('../fonts/bebas/VLBEBASNEUETHIN.ttf') format('truetype'),
+         url('../fonts/bebas/VLBEBASNEUETHIN.svg#VLBEBASNEUETHIN') format('svg');
+}
+
 
 /* @font-face {
   font-family: 'UTM_Caviar';

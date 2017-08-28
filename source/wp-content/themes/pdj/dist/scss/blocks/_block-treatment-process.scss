@@ -1,0 +1,105 @@
+.block-treatment-process {
+  overflow-y: hidden;
+  padding-bottom: 170px;
+  position: relative;
+
+  .block-bg-media {
+    background-position: bottom center;
+    background-size: 100% 100%;
+  }
+
+  .block-header {
+    margin-top: rem(90px);
+  }
+
+  .slick-list {
+    margin: rem(0 -16px);
+  }
+
+  .process-item {
+    display: none;
+    width: 33.3333%;
+    padding: rem(0 16px);
+
+    &.slick-slide {
+      display: block;
+    }
+  }
+
+  .process-body {
+    min-height: rem(260px);
+    padding: rem(0 25px);
+    position: relative;
+
+    &:before {
+      background-color: $white;
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: rem(40px);
+      z-index: -1;
+    }
+
+    .process-slide-number {
+      @include bebas_thin;
+      display: block;
+      font-size: rem(95px);
+      line-height: 1;
+    }
+
+    .process-slide-title {
+      @include bebas_book;
+      font-size: rem(50px);
+      margin: 0;
+    }
+  }
+
+  .slick-arrow {
+    bottom: 50%;
+    margin-bottom: rem(-25px);
+    position: absolute;
+    z-index: 5;
+
+    &.slick-prev {
+      left: 0;
+    }
+
+    &.slick-next {
+      right: 0;
+    }
+
+    @include breakpoint(tablet) {
+      @include transition(all 0.5s ease);
+
+      &.slick-prev {
+        left: rem(-30px);
+      }
+
+      &.slick-next {
+        right: rem(-30px);
+      }
+    }
+  }
+
+  .block-process-slide {
+    overflow-x: hidden;
+
+    @include breakpoint(tablet) {
+      &:hover {
+        .slick-arrow {
+          @include transition(all 0.5s ease);
+        }
+
+        .slick-prev {
+          left: 0;
+        }
+
+        .slick-next {
+          right: 0;
+        }
+      }
+    }
+  }
+}

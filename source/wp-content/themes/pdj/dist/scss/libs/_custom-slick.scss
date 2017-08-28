@@ -2,14 +2,15 @@
   @extend .fa;
   background: none;
   border-radius: 0;
-  border: rem(1px) solid $color-line;
-  height: rem(23px);
+  border: rem(3px) solid $color-line;
+  height: rem(50px);
   text-indent: -999em;
-  width: rem(23px);
+  width: rem(30px);
 
   &:before {
-    text-indent: 0;
     float: left;
+    font-size: rem(30px);
+    text-indent: 0;
   }
 
   &.slick-prev {

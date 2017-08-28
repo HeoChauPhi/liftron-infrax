@@ -24,10 +24,10 @@ require_once('init/options/option.php');
 if(!is_admin()) {
   // Add scripts
   function ct_libs_scripts() {
-    wp_register_script('moment', ('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'), array('jquery'), '2.16.0', TRUE);
+    wp_register_script('moment', get_stylesheet_directory_uri() . '/dist/js/libs/moment.min.js', array('jquery'), '2.16.0', TRUE);
     wp_enqueue_script('moment');
 
-    wp_register_script('jquery-ui', '//code.jquery.com/ui/1.12.1/jquery-ui.js', false, '1.12.1', TRUE);
+    wp_register_script('jquery-ui', get_stylesheet_directory_uri() . '/dist/js/libs/jquery-ui.js', false, '1.12.1', TRUE);
     wp_enqueue_script('jquery-ui');
 
     wp_register_script('lib-mousewheel', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.mousewheel.js', array('jquery'), '3.1.12', TRUE);
@@ -65,13 +65,13 @@ if(!is_admin()) {
 
 // Add admin script
 function ct_admin_scripts() {
-  wp_register_script('lib-moment', get_stylesheet_directory_uri() . '/dist/js/admin-libs/moment.js', array('jquery'), '2.13.0');
+  wp_register_script('lib-moment', get_stylesheet_directory_uri() . '/dist/js/libs/moment.min.js', array('jquery'), '2.16.0', TRUE);
   wp_enqueue_script('lib-moment');
 
-  wp_register_script('lib-datetimepicker', get_stylesheet_directory_uri() . '/dist/js/admin-libs/bootstrap-datetimepicker.min.js', array('jquery'), '4.17.37');
+  wp_register_script('lib-datetimepicker', get_stylesheet_directory_uri() . '/dist/js/admin-libs/bootstrap-datetimepicker.min.js', array('jquery'), '4.17.37', TRUE);
   wp_enqueue_script('lib-datetimepicker');
 
-  wp_register_script('admin-script', get_stylesheet_directory_uri() . '/dist/js/admin-script.js', array('jquery'), '1.0.0');
+  wp_register_script('admin-script', get_stylesheet_directory_uri() . '/dist/js/admin-script.js', array('jquery'), '1.0.0', TRUE);
   wp_enqueue_script('admin-script');
 }
 add_action('admin_init', 'ct_admin_scripts');
