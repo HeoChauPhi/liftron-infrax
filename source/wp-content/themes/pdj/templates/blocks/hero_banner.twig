@@ -7,11 +7,17 @@
   <div class="block-subscribe">
     <div class="container">
       <div class="form-subscribe-inner">
+        <span class="block-subscribe-button-close fa fa-times"></span>
         <div class="form-subscribe-header">
           <a href="#" class="subscribe-button">{{ __('Đăng ký ngay', 'pdj_theme') }}</a>
           <h2 class="block-title">{{ block_subscribe_title }}</h2>
         </div>
         {{ function('shortcode', '[contact-form-7 id="' ~ block_subscribe ~ '"]') }}
+      </div>
+
+      <div class="form-subscribe-notice">
+        <span class="block-subscribe-button-open fa fa-angle-double-up"></span>
+        <h2 class="block-title">{{ block_subscribe_title }}</h2>
       </div>
     </div>
   </div>

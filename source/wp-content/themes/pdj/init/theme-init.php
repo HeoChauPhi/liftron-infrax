@@ -388,7 +388,7 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'block_faq':
+        case 'block_workshop':
           //print_r($field);
 
           try {

@@ -2,14 +2,59 @@
   &-wrapper {
     position: relative;
 
+    .block-subscribe-button-close,
+    .form-subscribe-notice {
+      display: none;
+    }
+
+    .form-subscribe-notice {
+      //min-height: rem(70px);
+      cursor: pointer;
+      position: relative;
+
+      .block-title {
+        margin: 0;
+      }
+    }
+
+    .block-subscribe-button-open {
+      color: $white;
+      font-size: rem(30px);
+      height: 100%;
+      line-height: rem(70px);
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: rem(40px);
+
+      &:before {
+        animation-name: move_to_top;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        position: relative;
+      }
+    }
+
     .block-subscribe {
       position: absolute;
       left: 0;
       right: 0;
       top: 0;
+
+      &.block-subscribe-notfixed {
+        .form-subscribe-inner {
+          display: block !important;
+        }
+
+        .form-subscribe-notice {
+          display: none !important;
+        }
+      }
     }
 
-    .form-subscribe-inner {
+    .form-subscribe-inner,
+    .form-subscribe-notice {
       background-image: url('../images/subscribe-bg.png');
       background-position: top center;
       background-repeat: no-repeat;
@@ -129,7 +174,8 @@
     }
 
     @include breakpoint(desktop_wide_height) {
-      .form-subscribe-inner {
+      .form-subscribe-inner,
+      .form-subscribe-notice {
         background-size: 100% 100%;
         max-height: calc(100vh - 150px);
         overflow-y: auto;
@@ -163,6 +209,21 @@
     }
 
     .block-subscribe-fixed {
+      .block-subscribe-button-close {
+        color: $white;
+        cursor: pointer;
+        display: block;
+        font-size: rem(20px);
+        height: rem(30px);
+        line-height: rem(30px);
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: rem(30px);
+        z-index: 20;
+      }
+
       &.block-subscribe {
         bottom: 0;
         left: 0;
@@ -178,8 +239,8 @@
         width: 100%;
       }
 
-      .form-subscribe-inner {
-        display: block;
+      .form-subscribe-inner,
+      .form-subscribe-notice {
         float: none;
         max-height: none;
         max-width: none;
@@ -264,4 +325,9 @@
     font-size: rem(18px);
     font-weight: 700;
   }
+}
+
+@keyframes move_to_top {
+  from {top: rem(5px);}
+  to {top: rem(-5px);}
 }

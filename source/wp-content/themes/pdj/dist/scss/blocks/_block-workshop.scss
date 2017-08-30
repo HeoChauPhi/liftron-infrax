@@ -1,0 +1,39 @@
+.block-workshop {
+  @include background-image(radial-gradient(circle at top left, #c8e3f6, #3793d0));
+  position: relative;
+
+  > .container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  .block-bg-media {
+    background-size: 60% auto;
+    background-position: bottom right;
+    margin: rem(0 15px);
+  }
+
+  .block-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-header {
+    position: relative;
+
+    > .container {
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .block-top-notice {
+    @include transform(scale(0.6));
+  }
+}
