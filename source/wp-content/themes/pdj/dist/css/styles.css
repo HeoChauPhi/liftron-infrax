@@ -17555,14 +17555,27 @@ main .block-title {
     z-index: 2; }
   .block-workshop .block-header {
     position: relative; }
-    .block-workshop .block-header > .container {
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0; }
   .block-workshop .block-top-notice {
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
-    transform: scale(0.6); }
+    padding-top: 3.21429rem;
+    position: relative; }
+    .block-workshop .block-top-notice img {
+      -webkit-transform: scale(0.6) translate(-28%, -33%);
+      -moz-transform: scale(0.6) translate(-28%, -33%);
+      -ms-transform: scale(0.6) translate(-28%, -33%);
+      -o-transform: scale(0.6) translate(-28%, -33%);
+      transform: scale(0.6) translate(-28%, -33%);
+      position: absolute;
+      top: 0;
+      left: 0; }
+      @media (min-width: 1680px) {
+        .block-workshop .block-top-notice img {
+          -webkit-transform: scale(1) translate(0, 0);
+          -moz-transform: scale(1) translate(0, 0);
+          -ms-transform: scale(1) translate(0, 0);
+          -o-transform: scale(1) translate(0, 0);
+          transform: scale(1) translate(0, 0); } }
+  .block-workshop .block-title.block-title-maill {
+    font-family: 'VLBEBASNEUEBOOK', sans-serif; }
+    .block-workshop .block-title.block-title-maill:before {
+      width: 100%;
+      height: 0.07143rem; }

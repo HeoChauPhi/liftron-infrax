@@ -24,16 +24,32 @@
 
   .block-header {
     position: relative;
-
-    > .container {
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
   }
 
   .block-top-notice {
-    @include transform(scale(0.6));
+    padding-top: rem(45px);
+    position: relative;
+
+    img {
+      @include transform(scale(.6) translate(-28%, -33%));
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include breakpoint(1680px) {
+        @include transform(scale(1) translate(0, 0));
+      }
+    }
+  }
+
+  .block-title {
+    &.block-title-maill {
+      @include bebas_book;
+
+      &:before {
+        width: 100%;
+        height: rem(1px);
+      }
+    }
   }
 }
