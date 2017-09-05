@@ -333,7 +333,7 @@
     navigation_fixed();
     daterange_picker();
     js_select2();
-    //block_subscribe();
+    block_subscribe();
     video_slide();
     jcarousel_slider('.js-slide-one-item', 1);
     block_gallery_feature();
@@ -359,14 +359,14 @@
   $(window).scroll(function() {
     // Call to function
     navigation_fixed();
-    //block_subscribe();
+    block_subscribe();
   });
 
   $(window).resize(function() {
     // Call to function
     navigation_fixed();
     block_gallery_feature();
-    //block_subscribe();
+    block_subscribe();
 
     if ($('.block-gallery').length) {
       var window_width = $(window).width();
