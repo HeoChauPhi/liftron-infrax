@@ -226,11 +226,33 @@
 
       &.block-subscribe {
         bottom: 0;
-        left: 0;
+        left: auto;
+        width: rem(320px);
         position: fixed;
         right: 0;
         top: auto;
         z-index: 9;
+
+        .form-subscribe-header {
+          @include transform(rotate(0));
+        }
+
+        .block-title {
+          font-size: rem(16px);
+          margin-bottom: rem(20px);
+
+          .title-big {
+            color: $color-third;
+            font-size: inherit;
+            line-height: inherit;
+          }
+
+          .title-medium {
+            color: $color-third;
+            font-size: inherit;
+            line-height: inherit;
+          }
+        }
       }
 
       .container {
@@ -244,14 +266,17 @@
         float: none;
         max-height: none;
         max-width: none;
+        padding: rem(10px);
+      }
+
+      .form-subscribe-notice {
+        .block-title {
+          margin-bottom: 0;
+        }
       }
 
       .subscribe-button {
         display: none;
-      }
-
-      .form-subscribe-header {
-
       }
 
       .form-subscribe {
