@@ -36,6 +36,9 @@ if(!is_admin()) {
     wp_register_script('lib-youtubebackground', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.youtubebackground.js', array('jquery'), '1.0.5', TRUE);
     wp_enqueue_script('lib-youtubebackground');
 
+    wp_register_script('lib-fancybox3', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.fancybox.min.js', array('jquery'), '3.1.20', TRUE);
+    wp_enqueue_script('lib-fancybox3');
+
     wp_register_script('lib-slick', get_stylesheet_directory_uri() . '/dist/js/libs/slick.js', array('jquery'), '0.7.0', TRUE);
     wp_enqueue_script('lib-slick');
 

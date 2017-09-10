@@ -325,6 +325,16 @@
     });
   }
 
+  var form_subscribe_action = function() {
+    $('.form-subscribe .action-submit').append('<span class="sending-email"></span>');
+    $(document).ajaxComplete(function() {
+      $('.sending-email').remove();
+      var message_success = $('.form-subscribe').next('.wpcf7-response-output').text();
+      //alert(message_success);
+      $.fancybox.open($('.form-subscribe').next('.wpcf7-response-output'));
+    });
+  }
+
   /* Functions Call */
   $(document).ready(function() {
     $('.ajax-pagination .pager-item a').on('click', pagination_ajax);
@@ -349,6 +359,7 @@
     button_subscribe_close();
     button_subscribe_open();
     form_subscribe_notice();
+    $('.form-subscribe .action-submit input[type="submit"]').on('click', form_subscribe_action);
   });
 
   $(window).load(function() {
