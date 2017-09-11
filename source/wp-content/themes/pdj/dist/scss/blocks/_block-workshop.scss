@@ -20,9 +20,15 @@
   .block-content {
     position: relative;
     z-index: 2;
+
+    > .container {
+      clear: both;
+    }
   }
 
   .block-header {
+    overflow: hidden;
+    padding-top: rem(40px);
     position: relative;
   }
 
@@ -45,11 +51,105 @@
   .block-title {
     &.block-title-maill {
       @include bebas_book;
+      float: right;
+      font-size: rem(40px);
+      margin-bottom: rem(10px);
+      margin-top: rem(40px);
+      text-align: left;
+      width: 65%;
 
       &:before {
-        width: 100%;
         height: rem(1px);
+        margin-bottom: rem(5px);
+        width: 100%;
       }
     }
+
+    &.block-title-big {
+      @include bebas_book;
+      align-items: baseline;
+      clear: both;
+      display: flex;
+      float: left;
+      font-size: rem(115px);
+      font-weight: 700;
+      margin-bottom: rem(20px);
+      text-align: right;
+      width: 55%;
+
+      &:before {
+        content: "";
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .block-workshop-content {
+    @include bebas;
+
+    h1, h2, h3, h4, h5, h6 {
+      @include bebas;
+      color: $blue;
+      font-weight: 700;
+    }
+
+    ul {
+      font-size: rem(18px);
+      list-style: none;
+      padding: 0;
+
+      li {
+        @include border-radius(rem(500px 500px 0px 500px));
+        background-color: $blue;
+        color: $white;
+        display: table;
+        list-style: none;
+        margin-bottom: rem(3px);
+        padding: rem(3px 10px);
+      }
+    }
+  }
+
+  .block-bottom {
+    display: inline-block;
+    margin: rem(80px 0 50px 0);
+    width: 100%;
+  }
+
+  .block-workshop-register-count {
+    @include bebas;
+    border-color: $white;
+    border-style: solid;
+    border-width: rem(0 3px 3px 3px);
+    color: $white;
+    float: left;
+    font-size: rem(40px);
+    font-weight: 700;
+    letter-spacing: rem(10px);
+    padding: rem(20px 10px 5px 10px);
+    position: relative;
+
+    .count {
+      font-size: rem(102px);
+      position: absolute;
+      right: 10px;
+      top: -35%;
+    }
+  }
+
+  .workshop-register-content {
+    border-top: rem(3px) solid $white;
+    margin-left: rem(-10px);
+    padding-left: rem(10px);
+    padding-top: rem(22px);
+  }
+
+  .block-bottom-notice {
+    float: right;
+  }
+
+  @include breakpoint(991px) {
+    
   }
 }
