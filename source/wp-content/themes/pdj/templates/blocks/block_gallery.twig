@@ -12,11 +12,13 @@
 
         {% if item.media_type == 'images' %}
           {% set item_slide_class = ' js-slide-one-item' %}
+          {% set item_wrapper_class = ' block-gallery-item-images' %}
         {% else %}
           {% set item_slide_class = ' js-slide-video' %}
+          {% set item_wrapper_class = ' block-gallery-item-video' %}
         {% endif %}
 
-        <div class="block-gallery-item">
+        <div class="block-gallery-item{{item_wrapper_class}}">
           <div class="gallery-item-media{{ item_slide_class }}" data-time-speed="{{loop.index * 1500}}">
           {% if item.media_type == 'images' %}
             {% for image in item.media_image_list %}
