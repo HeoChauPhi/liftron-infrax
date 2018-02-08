@@ -142,14 +142,41 @@
     border-top: rem(3px) solid $white;
     margin-left: rem(-10px);
     padding-left: rem(10px);
-    padding-top: rem(22px);
+    padding-top: rem(26px);
   }
 
   .block-bottom-notice {
     float: right;
   }
 
-  @include breakpoint(991px) {
-    
+  @include breakpoint(tablet_lager) {
+    .block-bg-media {
+      background-size: 100% auto;
+    }
+
+    .block-header {
+      padding-left: rem(15px);
+      padding-right: rem(15px);
+    }
+
+    .block-top-notice {
+      text-align: center;
+
+      img {
+        @include transform(scale(1) translate(0, 0));
+        position: static;
+      }
+    }
+
+    .block-workshop-register-count {
+      float: none;
+      margin: 0 auto rem(50px) auto;
+      width: rem(335px);
+    }
+
+    .block-bottom-notice {
+      float: none;
+      text-align: center;
+    }
   }
 }

@@ -19,6 +19,10 @@
     @media (max-width: 768px) { @content ; }
   }
 
+  @else if $point == tablet_lager {
+    @media (max-width: 991px) { @content ; }
+  }
+
   @else if $point == phablet {
     @media (min-width: 600px)  { @content ; }
   }
