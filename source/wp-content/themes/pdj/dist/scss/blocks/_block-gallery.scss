@@ -70,10 +70,6 @@
   .block-gallery-item {
     height: rem(300px);
 
-    &.block-gallery-item-images {
-      height: rem(600px);
-    }
-
     // Slick Slider
     .slide-image-item,
     .slide-video-item {
@@ -98,12 +94,16 @@
       }
     }
 
+    &.block-gallery-item-images {
+      height: rem(600px);
+
+      .slide-image-item {
+        height: rem(600px);
+      }
+    }
+
     @include breakpoint(tablet) {
       height: rem(340px);
-
-      &.block-gallery-item-images {
-        height: rem(680px);
-      }
 
       .slide-image-item {
         height: rem(340px);
@@ -112,6 +112,14 @@
       .slide-video-item {
         iframe {
           height: rem(340px);
+        }
+      }
+      
+      &.block-gallery-item-images {
+        height: rem(680px);
+
+        .slide-image-item {
+          height: rem(680px);
         }
       }
     }
